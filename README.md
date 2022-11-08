@@ -4,3 +4,8 @@
 - Catálogo de productos
 - Productos y precio mostrados en carrito.  
 Escribiendo 3 en el primer prompt se sale de la ejecución para poder abrir la consola.
+
+**8/11**
+- Catálogo de productos transferido a un array.
+- Menú inicial ahora dentro del prompt.
+- Cada producto ahora es un objeto con tres parámetros.
