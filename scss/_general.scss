@@ -1,0 +1,7 @@
+body{
+    background-color: #fde5e5;
+}
+
+h1{
+    @include flex(row, flex-start, center, nowrap);
+}

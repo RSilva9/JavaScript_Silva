@@ -1,0 +1,14 @@
+nav {
+  background-color: #dbb4c4;
+}
+nav #navTitle {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+nav ul li a {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: black !important;
+}
+
+body {
+  background-color: #fde5e5;
+}/*# sourceMappingURL=main.css.map */
