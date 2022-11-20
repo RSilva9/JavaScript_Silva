@@ -1,100 +1,100 @@
-function Caja(tam, ad, pr){
-     this.tamano = tam;
-     this.adicional = ad;
-     this.precio = pr;
-}
-
-const cajaInd = new Caja("individual", "nada", 2800);
-const cajaDob = new Caja("doble", "nada", 5600);
-const cajaTri = new Caja("triple", "nada", 8000);
-const cajaIndChoc = new Caja("individual", "chocolate", 3000);
-const cajaIndCop = new Caja("individual", "copa", 4500);
-
 const carrito = []
-const productos = [cajaInd, cajaDob, cajaTri, cajaIndChoc, cajaIndCop]
-
 let precioFinal = 0
 
-alert("Bienvenido a la tienda online")
-menu()
+document.addEventListener('DOMContentLoaded', ()=>{
+    const productos = document.querySelectorAll('.inputBox input')
+   
+    for(let prod of productos){
+        prod.addEventListener('change', (evt)=>{
+            if(evt.currentTarget.checked){
+                let title = evt.currentTarget.parentElement.parentElement.dataset.title
+                let price = evt.currentTarget.parentElement.parentElement.dataset.price
+                carrito.push(title + " - $" + price)
 
-function menu(){
-    let opt1 = prompt("Elegir opción: \n1 - Ver catálogo. \n2 - Ver carrito. \n3 - Salir.");
-    switch(opt1){
-        case "1":
-            catalogo()
-            break
-        case "2":
-            carro()
-            break
-        case "3":
-            (function salir(){alert("Fin de la compra.")})()
-            break
-        default:
-            alert("Opción inexistente.")
-            menu()
-    }
-}
-
-function catalogo(){
-    console.log("____________________________")
-    let i=1;
-    for(const item of productos){ //Muestra todas
-        if(item.adicional == "nada"){
-             console.log(i + " - Caja de vino " + item.tamano + " - $" + item.precio)
-        }else{
-             console.log(i+ " - Caja de vino " + item.tamano + " con " + item.adicional + " - $" + item.precio)
-        }
-        i+=1
-    }
-    console.log(i + " - Atrás.")
-    
-    let optcat = prompt("Elegir opción:")
-    while(optcat != i){
-        if(optcat > productos.length+1){
-            alert("Opción inexistente")
-            catalogo()
-        }else{
-            precioFinal += productos[optcat-1].precio
-            if(productos[optcat-1].adicional == "nada"){
-                alert("Caja de vino " + productos[optcat-1].tamano + " agregado al carrito.")
+                precioFinal += Number(price)
             }else{
-                alert("Caja de vino " + productos[optcat-1].tamano + " con " + productos[optcat-1].adicional + " agregado al carrito.")
+                let title = evt.currentTarget.parentElement.parentElement.dataset.title
+                let price = evt.currentTarget.parentElement.parentElement.dataset.price
+                
+                let index = carrito.indexOf(title + " - $" + price);
+                if (index >= 0) {
+                    carrito.splice( index, 1 );
+                }
+
+                precioFinal -= Number(price)
+                
             }
-            carrito.push(productos[optcat-1])
+            actCarrito()
+            
+        })
+        
+    }
+})
+
+function actCarrito(){
+    let html=""
+    for(let prod of carrito){
+        if(title =! null){
+            html += `
+            <li>${prod}</li>
+            `
+        }else{
+            
         }
         
-        optcat = prompt("Elegir opción:")
     }
-    menu()
-}
 
-function carro(){
-    if(carrito.length == 0){
-        alert("El carrito está vacío")
-        menu()
+    let ul = document.querySelector("#carrito ul")
+    let h4 = document.querySelector("#carrito h4")
+    ul.innerHTML = html
+    h4.innerHTML = "$" + precioFinal
+}
+ 
+const btn = document.querySelector('#btnPagar')
+btn.onclick = (evt)=>{
+    if(precioFinal != 0){
+        evt.preventDefault()
+        let pago = 
+        `
+        <div class="d-flex justify-content-between">
+        <p>El pago de $${precioFinal} fue realizado correctamente</p>
+        <button class="btnn m-2" id="btnReset">Reiniciar compra</button>
+        </div>
+        `
+        let carroPago = document.querySelector("#carrito")
+        carroPago.innerHTML = pago
+
+        const btnR = document.querySelector('#btnReset')
+        btnR.onclick = (evt) => {
+        evt.preventDefault()
+        window.location.reload()
+        }
     }else{
-        let i=1
-        console.log("-------- Carrito --------")
-        for(const item of carrito){ //Muestra todas
-            if(item.adicional == "nada"){
-                console.log(i + " - Caja de vino " + item.tamano + " - $" + item.precio)
-            }else{
-                console.log(i+ " - Caja de vino " + item.tamano + " con " + item.adicional + " - $" + item.precio)
-            }
-            i+=1
+        evt.preventDefault()
+        let pago = 
+        `
+        <div class="d-flex justify-content-between">
+        <p>El carrito se encuentra vacío</p>
+        <button class="btnn m-2" id="btnReset">Reiniciar compra</button>
+        </div>
+        `
+        let carroPago = document.querySelector("#carrito")
+        carroPago.innerHTML = pago
+
+        const btnR = document.querySelector('#btnReset')
+        btnR.onclick = (evt) => {
+        evt.preventDefault()
+        window.location.reload()
         }
-        console.log("Precio final a pagar: $" + precioFinal)
-        let pm = prompt("1- Pagar. \n2- Volver al menu.")
-        if(pm == "1"){
-            alert("Pago realizado.")
-        }else if (pm == "2"){
-            menu()
-        }else if (pm != "1" || "2"){
-            alert("Opción inexistente.")
-            carro()
-        }
-    }
+    }   
 }
 
+
+    
+    
+    
+    
+    
+    
+    
     

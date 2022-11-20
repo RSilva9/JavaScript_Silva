@@ -1,3 +1,9 @@
+@media (min-width: 1024px) {
+  .accordion {
+    width: 85%;
+    margin: auto;
+  }
+}
 nav {
   background-color: #dbb4c4;
 }
@@ -18,7 +24,7 @@ h2 {
   margin-left: 5px;
 }
 
-h3 {
+header h3 {
   margin-top: 10px;
   text-align: center;
 }
@@ -28,10 +34,24 @@ h3 {
   background-color: white;
   text-align: center;
   padding: 10px;
+  margin: 5px;
 }
 .cCard img {
   width: 100%;
   padding: 5px;
+}
+
+.btnn {
+  background-color: rgba(189, 84, 133, 0.3960784314);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.267);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.048), 0 6px 20px 0 rgba(0, 0, 0, 0.062);
+  transition-duration: 0.4s;
+}
+
+.btnn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.116), 0 17px 50px 0 rgba(0, 0, 0, 0.116);
+  background-color: rgba(238, 203, 220, 0.862745098);
 }
 
 #ttl {
@@ -47,14 +67,38 @@ h3 {
   margin: 0px;
 }
 
+input[type=checkbox] {
+  transform: scale(1.2);
+}
+
 #accProds img {
   width: 100%;
 }
 
+#carrito {
+  background-color: white;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+#carrito h3, #carrito h4 {
+  padding: 5px;
+}
+#carrito p {
+  padding: 5px;
+  font-size: 1.3em;
+}
+
 .inputBox {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.274);
   background-color: rgba(128, 128, 128, 0.062);
 }
-.inputBox h4 {
+.inputBox h3, .inputBox h4 {
+  font-size: 1rem;
   padding: 0px 10px;
+}
+.inputBox img {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }/*# sourceMappingURL=main.css.map */
