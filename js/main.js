@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
             }
             actCarrito()
             
-
             inputs = document.querySelectorAll('input[type="checkbox"]')
             var arrData = []
             for(let c of inputs){
