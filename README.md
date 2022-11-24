@@ -1,5 +1,7 @@
 # JavaScript_Silva
 
+Proyecto subido a Netlify: https://vermillion-sherbet-9a93a8.netlify.app/index.html
+
 **20/10** (Primer entrada del proyecto)
 - Catálogo de productos
 - Productos y precio mostrados en carrito.  
