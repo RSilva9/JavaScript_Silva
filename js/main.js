@@ -87,12 +87,12 @@ btn.onclick = (evt)=>{
         carroPago.innerHTML = pago
         
         }
+        localStorage.removeItem('carrito')
+        localStorage.removeItem('precioFinal')
+        localStorage.removeItem('inputs')
         const btnR = document.querySelector('#btnReset')
         btnR.onclick = (evt) => {
         evt.preventDefault()
         window.location.reload()
-        localStorage.removeItem('carrito')
-        localStorage.removeItem('precioFinal')
-        localStorage.removeItem('inputs')
         }   
 }
