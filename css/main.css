@@ -11,6 +11,9 @@ nav ul li a {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: black !important;
 }
+nav img {
+  width: 2em;
+}
 
 body {
   background-color: #fde5e5;
@@ -45,7 +48,7 @@ header h3 {
   background-color: rgba(189, 84, 133, 0.3960784314);
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.267);
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.048), 0 6px 20px 0 rgba(0, 0, 0, 0.062);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.048), 0 6px 20px 0 rgba(0, 0, 0, 0.062);
   transition-duration: 0.4s;
 }
 
@@ -65,6 +68,9 @@ header h3 {
 #ttl h1 {
   font-size: 3em;
   margin: 0px;
+}
+#ttl img {
+  width: 2em;
 }
 
 input[type=checkbox] {

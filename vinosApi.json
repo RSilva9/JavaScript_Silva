@@ -1,0 +1,42 @@
+[
+    {
+        "nombre": "Caja de vino simple (cartón)",
+        "precio": 3000,
+        "id": "101"
+    },
+    {
+        "nombre": "Caja de vino doble (cartón)",
+        "precio": 6400,
+        "id": "102"
+    },
+    {
+        "nombre": "Caja de vino simple (madera)",
+        "precio": 3500,
+        "id": "103"
+    },
+    {
+        "nombre": "Caja de vino doble (madera)",
+        "precio": 6900,
+        "id": "104"
+    },
+    {
+        "nombre": "Caja de vino con chocolate y nueces",
+        "precio": 4500,
+        "id": "201"
+    },
+    {
+        "nombre": "Caja de vino con chocolate y mermelada",
+        "precio": 4600,
+        "id": "202"
+    },
+    {
+        "nombre": "Caja de vino con dip del bosque, pasta de aceitunas y chutney",
+        "precio": 5200,
+        "id": "203"
+    },
+    {
+        "nombre": "Caja de vino con mermelada, deshuesado al escabeche y chutney",
+        "precio": 5300,
+        "id": "204"
+    }
+]

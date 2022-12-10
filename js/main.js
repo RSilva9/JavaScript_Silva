@@ -1,57 +1,89 @@
 const carrito = JSON.parse(localStorage.getItem('carrito')) || []
 let precioFinal = JSON.parse(localStorage.getItem('precioFinal')) || 0
-var inputs = JSON.parse(localStorage.getItem('inputs')) || document.querySelectorAll('input[type="checkbox"]')
-for(let i of inputs){
-    document.getElementById(i.id).checked = i.checked
-}
 
 actCarrito()
 
-document.addEventListener('DOMContentLoaded', ()=>{
-    const productos = document.querySelectorAll('.inputBox input')
+document.addEventListener('DOMContentLoaded', () => {
+    const productosAdd = document.getElementsByClassName('btnAdd')
+    const productosRemove = document.getElementsByClassName('btnRemove')
 
-    for(let prod of productos){
+    for (let prod of productosAdd) {
 
-        prod.addEventListener('change', (evt)=>{
-            if(evt.currentTarget.checked){
-                let title = evt.currentTarget.parentElement.parentElement.dataset.title
-                let price = evt.currentTarget.parentElement.parentElement.dataset.price
-                carrito.push(title + " - $" + price)
+        prod.addEventListener('click', (evt) => {
+            let idproducto = evt.currentTarget.parentElement.parentElement.dataset.id
+            fetch('./vinosApi.json')
+                .then((resp) => resp.json())
+                .then((products) => {
 
-                precioFinal += Number(price)
-            }else{
-                let title = evt.currentTarget.parentElement.parentElement.dataset.title
-                let price = evt.currentTarget.parentElement.parentElement.dataset.price
-                
-                let index = carrito.indexOf(title + " - $" + price);
-                if (index >= 0) {
-                carrito.splice( index, 1 );
-                }
+                    for (let prod of products) {
+                        if (prod.id == idproducto) {
+                            let title = prod.nombre
+                            let price = prod.precio
+                            let id = prod.id
+                            carrito.push({
+                                title: title,
+                                price: price,
+                                id: id
+                            })
+                            precioFinal += Number(price)
+                            Toastify({
+                                text: `${title} agregado al carrito`,
+                                duration: 2000,
+                                position: "right",
+                                style: {
+                                    background: "linear-gradient(to right, #6246af65, #451db365)",
+                                }
+                            }).showToast();
+                        }
+                    }
+                })
+                .finally(() => {
+                    actCarrito()
+                })
 
+        })
+
+    }
+
+    for (let prod of productosRemove) {
+
+        prod.addEventListener('click', (evt) => {
+            let id = evt.currentTarget.parentElement.parentElement.dataset.id
+            const index = carrito.findIndex(object => {
+                return object.id === id
+            })
+            if (index >= 0) {
+                let price = carrito[index].price
+                let title = carrito[index].title
                 precioFinal -= Number(price)
+
+                carrito.splice(index, 1)
+
+                Toastify({
+                    text: `${title} eliminado del carrito`,
+                    duration: 2000,
+                    position: "right",
+                    style: {
+                        background: "linear-gradient(to right, #a72d2d65, #b4111165)",
+                    }
+                }).showToast();
+
+                actCarrito()
             }
-            actCarrito()
-            
-            inputs = document.querySelectorAll('input[type="checkbox"]')
-            var arrData = []
-            for(let c of inputs){
-                arrData.push({ id: c.id, checked: c.checked })
-            }
-            localStorage.setItem('inputs', JSON.stringify(arrData))
         })
     }
 })
 
-function actCarrito(){
+function actCarrito() {
     localStorage.setItem('precioFinal', JSON.stringify(precioFinal))
     localStorage.setItem('carrito', JSON.stringify(carrito))
-    let html=""
-    for(let prod of carrito){
-        if(title =! null){
+    let html = ""
+    for (let prod of carrito) {
+        if (title = !null) {
             html += `
-             <li>${prod}</li>
+             <li>${prod.title + " - $" + prod.price}</li>
              `
-    }
+        }
     }
 
     let ul = document.querySelector("#carrito ul")
@@ -59,40 +91,30 @@ function actCarrito(){
     ul.innerHTML = html
     h4.innerHTML = "$" + precioFinal
 }
- 
-const btn = document.querySelector('#btnPagar')
-btn.onclick = (evt)=>{
-    if(precioFinal != 0){
-        evt.preventDefault()
-        let pago = 
-        `
-        <div class="d-flex justify-content-between">
-        <p>El pago de $${precioFinal} fue realizado correctamente</p>
-        <button class="btnn m-2" id="btnReset">Reiniciar compra</button>
-        </div>
-        `
-        let carroPago = document.querySelector("#carrito")
-        carroPago.innerHTML = pago
 
-        }else{
+const btn = document.querySelector('#btnPagar')
+btn.onclick = (evt) => {
+    if (precioFinal != 0) {
         evt.preventDefault()
-        let pago = 
-        `
-        <div class="d-flex justify-content-between">
-        <p>El carrito se encuentra vacío</p>
-        <button class="btnn m-2" id="btnReset">Reiniciar compra</button>
-        </div>
-        `
-        let carroPago = document.querySelector("#carrito")
-        carroPago.innerHTML = pago
-        
-        }
-        localStorage.removeItem('carrito')
-        localStorage.removeItem('precioFinal')
-        localStorage.removeItem('inputs')
-        const btnR = document.querySelector('#btnReset')
-        btnR.onclick = (evt) => {
+
+        Swal.fire({
+            title: `El pago de ${precioFinal} fue realizado con éxito`,
+            icon: 'success'
+        }).then((res) => {
+            if (res.isConfirmed || res.isDismissed) {
+                window.location.reload()
+            }
+        })
+
+    } else {
         evt.preventDefault()
-        window.location.reload()
-        }   
+
+        Swal.fire({
+            title: 'El carrito está vacío',
+            icon: 'error'
+        })
+    }
+
+    localStorage.removeItem('carrito')
+    localStorage.removeItem('precioFinal')
 }

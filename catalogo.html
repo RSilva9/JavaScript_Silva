@@ -1,146 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
-    <title>PreEntrega3 Silva</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <title>PreEntrega3 Silva</title>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">
-            <img src="img/wineLogo.png" alt="logo Wine">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="catalogo.html">Catálogo</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
-    <div id="ttl">
-      <h1>Catálogo</h1>
-    </div>
-
-    <div class="accordion" id="accordionPanelsStayOpenExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-              Cajas sin delicatessen
-            </button>
-          </h2>
-          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-            <div class="accordion-body container-fluid d-flex flex-wrap flex-md-nowrap" id="accProds">
-                
-                  <div class="input-group m-1 inputBox" data-title="Caja de vino simple (cartón)" data-price="3000">
-                    <div>
-                      <input class="form-check-input m-2" id="ch1" type="checkbox" value="" aria-label="Checkbox for followinginput">
-                    </div>
-                   <div>
-                      <h3>Caja de vino simple (cartón)</h3>
-                      <h4>$3000</h4>
-                      <img src="img/products/cart1.jpg" alt="">
-                    </div>
-                  </div>
-
-                  <div class="input-group m-1 inputBox" data-title="Caja de vino doble (cartón)" data-price="6400">
-                    <div>
-                      <input class="form-check-input m-2" id="ch2" type="checkbox" value="" aria-label="Checkbox for followinginput">
-                    </div>
-                    <div>
-                        <h3>Caja de vino doble (cartón)</h3>
-                        <h4>$6400</h4>
-                        <img src="img/products/cart2.jpg" alt="">
-                    </div>
-                  </div>
-              
-                  <div class="input-group m-1 inputBox" data-title="Caja de vino simple (madera)" data-price="3500">
-                      <div>
-                        <input class="form-check-input m-2" id="ch3" type="checkbox" value="" aria-label="Checkbox for followinginput">
-                      </div>
-                      <div>
-                          <h3>Caja de vino simple (madera)</h3>
-                          <h4>$3500</h4>
-                          <img src="img/products/simple.jpg" alt="">
-                      </div>
-                  </div>
-
-                  <div class="input-group m-1 inputBox" data-title="Caja de vino doble (madera)" data-price="6900">
-                      <div>
-                        <input class="form-check-input m-2" id="ch4" type="checkbox" value="" aria-label="Checkbox for following input">
-                      </div>
-                      <div>
-                          <h3>Caja de vino doble (madera)</h3>
-                          <h4>$6900</h4>
-                          <img src="img/products/doble.jpg" alt="">
-                      </div>
-                  </div>
-
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                Cajas con delicatessen
-            </button>
-          </h2>
-          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-              <div class="accordion-body container-fluid d-flex flex-wrap flex-md-nowrap" id="accProds">
-                
-                  <div class="input-group m-1 inputBox" data-title="Caja de vino con chocolate y nueces" data-price="4500">
-                        <div>
-                          <input class="form-check-input m-2" id="ch5" type="checkbox" value="" aria-label="Checkbox for followinginput">
-                        </div>
-                        <div>
-                            <h3>Caja de vino con chocolate y nueces</h3>
-                            <h4>$4500</h4>
-                            <img src="img/products/chocNuec.jpg" alt="">
-                        </div>
-                  </div>
-
-                  <div class="input-group m-1 inputBox" data-title="Caja de vino con chocolate y mermelada" data-price="4600">
-                        <div>
-                          <input class="form-check-input m-2" id="ch6" type="checkbox" value="" aria-label="Checkbox for following input">
-                        </div>
-                        <div>
-                            <h3>Caja de vino con chocolate y mermelada</h3>
-                            <h4>$4600</h4>
-                            <img src="img/products/chocMerm.jpg" alt="">
-                        </div>
-                  </div> 
-
-                </div>
-            </div>
-          </div>
-    </div>
-    
-    <section id="carrito" class="sticky-bottom">
-      <h3>Carrito</h3>
-      <div>
-        <ul>
-
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/wineLogo.webp" alt="logo Wine">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="catalogo.html">Catálogo</a>
+          </li>
         </ul>
-        <div class="d-flex flex-row justify-content-between">
-          <h4>Precio final: </h4>
-          <button class="btnn m-2" id="btnPagar">Pagar</button>
-        </div>
-      
-    </section>
+      </div>
+    </div>
+  </nav>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/main.js"></script>
+  <div id="ttl">
+    <h1>Catálogo</h1>
+  </div>
+
+  <div class="accordion" id="accordionPanelsStayOpenExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+          Cajas sin delicatessen
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+        aria-labelledby="panelsStayOpen-headingOne">
+        <div class="accordion-body container-fluid d-flex flex-wrap flex-md-nowrap" id="accProds">
+
+          <div class="input-group m-1 inputBox" data-id=101>
+            <div>
+            </div>
+            <div>
+              <h3>Caja de vino simple (cartón)</h3>
+              <h4>$3000</h4>
+              <button class="btnn m-1 btnAdd">Agregar</button>
+              <button class="btnn m-1 btnRemove">Quitar</button>
+              <img src="img/products/cart1.webp" alt="">
+            </div>
+          </div>
+
+          <div class="input-group m-1 inputBox" data-id=102>
+            <div>
+            </div>
+            <div>
+              <h3>Caja de vino doble (cartón)</h3>
+              <h4>$6400</h4>
+              <button class="btnn m-1 btnAdd">Agregar</button>
+              <button class="btnn m-1 btnRemove">Quitar</button>
+              <img src="img/products/cart2.webp" alt="">
+            </div>
+          </div>
+
+          <div class="input-group m-1 inputBox" data-id=103>
+            <div>
+            </div>
+            <div>
+              <h3>Caja de vino simple (madera)</h3>
+              <h4>$3500</h4>
+              <button class="btnn m-1 btnAdd">Agregar</button>
+              <button class="btnn m-1 btnRemove">Quitar</button>
+              <img src="img/products/cart3.webp" alt="">
+            </div>
+          </div>
+
+          <div class="input-group m-1 inputBox" data-id=104>
+            <div>
+            </div>
+            <div>
+              <h3>Caja de vino doble (madera)</h3>
+              <h4>$6900</h4>
+              <button class="btnn m-1 btnAdd">Agregar</button>
+              <button class="btnn m-1 btnRemove">Quitar</button>
+              <img src="img/products/cart4.webp" alt="">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+          Cajas con delicatessen
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingTwo">
+        <div class="accordion-body container-fluid d-flex flex-wrap flex-md-nowrap" id="accProds">
+
+          <div class="input-group m-1 inputBox" data-id=201>
+            <div>
+            </div>
+            <div>
+              <h3>Caja de vino con chocolate y nueces</h3>
+              <h4>$4500</h4>
+              <button class="btnn m-1 btnAdd">Agregar</button>
+              <button class="btnn m-1 btnRemove">Quitar</button>
+              <img src="img/products/chocNuec.webp" alt="">
+            </div>
+          </div>
+
+          <div class="input-group m-1 inputBox" data-id=202>
+            <div>
+            </div>
+            <div>
+              <h3>Caja de vino con chocolate y mermelada</h3>
+              <h4>$4600</h4>
+              <button class="btnn m-1 btnAdd">Agregar</button>
+              <button class="btnn m-1 btnRemove">Quitar</button>
+              <img src="img/products/chocMerm.webp" alt="">
+            </div>
+          </div>
+
+          <div class="input-group m-1 inputBox" data-id=203>
+            <div>
+            </div>
+            <div>
+              <h3>Caja de vino con dip del bosque, pasta de aceitunas y chutney</h3>
+              <h4>$5200</h4>
+              <button class="btnn m-1 btnAdd">Agregar</button>
+              <button class="btnn m-1 btnRemove">Quitar</button>
+              <img src="img/products/dipPastChut.webp" alt="">
+            </div>
+          </div>
+
+          <div class="input-group m-1 inputBox" data-id=204>
+            <div>
+            </div>
+            <div>
+              <h3>Caja de vino con mermelada, deshuesado al escabeche y chutney</h3>
+              <h4>$500</h4>
+              <button class="btnn m-1 btnAdd">Agregar</button>
+              <button class="btnn m-1 btnRemove">Quitar</button>
+              <img src="img/products/mermDesChut.webp" alt="">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="carrito" class="sticky-bottom">
+    <h3>Carrito</h3>
+    <div>
+      <ul>
+
+      </ul>
+      <div class="d-flex flex-row justify-content-between">
+        <h4>Precio final: </h4>
+        <button class="btnn m-2" id="btnPagar">Pagar</button>
+      </div>
+
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>
