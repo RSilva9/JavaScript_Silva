@@ -3,7 +3,7 @@
 Proyecto subido a Netlify: https://vermillion-sherbet-9a93a8.netlify.app/index.html
 
 **20/10** (Primer entrada del proyecto)
-- Catálogo de productos
+- Catálogo de productos.
 - Productos y precio mostrados en carrito.  
 Escribiendo 3 en el primer prompt se sale de la ejecución para poder abrir la consola.
 
@@ -24,5 +24,5 @@ Escribiendo 3 en el primer prompt se sale de la ejecución para poder abrir la c
 **10/12**
 - AJAX, API y librerías (SweetAlert y Toastify) integrados al proyecto.
 - Los productos son obtenidos de un archivo .json a través de fetch().
-- Imágenes cambiadas a formato webp
-- Ahora se puede agregar y quitar cualquier cantidad de productos.
+- Imágenes cambiadas a formato webp.
+- Ahora se pueden agregar y quitar cualquier cantidad de productos iguales.
