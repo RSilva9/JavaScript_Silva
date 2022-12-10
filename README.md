@@ -20,3 +20,9 @@ Escribiendo 3 en el primer prompt se sale de la ejecución para poder abrir la c
 **23/11**
 - Storage integrado: ahora el carrito y el estado de los inputs se guarda en almacenamiento local.
 + + Funcionalidades a agregar: poder añadir más de un elemento igual al carrito.
+
+**10/12**
+- AJAX, API y librerías (SweetAlert y Toastify) integrados al proyecto.
+- Los productos son obtenidos de un archivo .json a través de fetch().
+- Imágenes cambiadas a formato webp
+- Ahora se puede agregar y quitar cualquier cantidad de productos.
